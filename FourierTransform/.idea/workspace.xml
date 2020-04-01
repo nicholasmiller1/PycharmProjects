@@ -7,7 +7,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ZuqeD4Y6C4hW7WFiNIR6snUmma" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -16,6 +20,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -29,6 +35,8 @@
       <updated>1585699424230</updated>
       <workItem from="1585699433549" duration="65000" />
       <workItem from="1585699531164" duration="68000" />
+      <workItem from="1585707412539" duration="145000" />
+      <workItem from="1585707573998" duration="232000" />
     </task>
     <servers />
   </component>
@@ -36,13 +44,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="178" key="FileChooserDialogImpl" timestamp="1585699590891">
+    <state x="524" y="243" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585707536372">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585699590891" />
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1585699531405">
+    <state x="524" y="243" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1585707536372" />
+    <state x="549" y="178" key="FileChooserDialogImpl" timestamp="1585707808818">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585699531405" />
+    <state x="549" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585707808818" />
+    <state x="279" y="78" key="SettingsEditor" timestamp="1585707811630">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="279" y="78" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585707811630" />
+    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1585707578532">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585707578532" />
   </component>
 </project>
