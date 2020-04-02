@@ -7,10 +7,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1ZuqeD4Y6C4hW7WFiNIR6snUmma" />
+  <component name="ProjectId" id="1Zv8wIbxZYkCv0rmz4VvVKSkwFq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,23 +27,50 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Main.py" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="FourierTransform" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Nicholas C Miller\Git Projects\My Repositories\PycharmProjects\FourierTransform\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="943ac91d-56aa-495f-bd27-81213edcc88b" name="Default Changelist" comment="" />
-      <created>1585699424230</created>
+      <changelist id="589b3dc4-bde8-49b6-9801-faeed6b92b83" name="Default Changelist" comment="" />
+      <created>1585708443756</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585699424230</updated>
-      <workItem from="1585699433549" duration="65000" />
-      <workItem from="1585699531164" duration="68000" />
-      <workItem from="1585707412539" duration="145000" />
-      <workItem from="1585707573998" duration="232000" />
+      <updated>1585708443756</updated>
+      <workItem from="1585708446182" duration="3013000" />
+      <workItem from="1585767930489" duration="8876000" />
     </task>
     <servers />
   </component>
@@ -44,22 +78,37 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="524" y="243" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585707536372">
+    <state x="223" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585782306737">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="524" y="243" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1585707536372" />
-    <state x="549" y="178" key="FileChooserDialogImpl" timestamp="1585707808818">
+    <state x="223" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1585782306737" />
+    <state x="548" y="191" key="FileChooserDialogImpl" timestamp="1585708844092">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="178" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585707808818" />
-    <state x="279" y="78" key="SettingsEditor" timestamp="1585707811630">
+    <state x="548" y="191" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585708844092" />
+    <state width="723" height="223" key="GridCell.Tab.0.bottom" timestamp="1585713212270">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="279" y="78" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585707811630" />
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1585707578532">
+    <state width="723" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585713212270" />
+    <state width="723" height="223" key="GridCell.Tab.0.center" timestamp="1585713212270">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="477" y="261" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585707578532" />
+    <state width="723" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585713212270" />
+    <state width="723" height="223" key="GridCell.Tab.0.left" timestamp="1585713212269">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585713212269" />
+    <state width="723" height="223" key="GridCell.Tab.0.right" timestamp="1585713212270">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="723" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585713212270" />
+    <state x="451" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1585865845217">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="451" y="262" key="com.intellij.ide.util.TipDialog/0.0.1536.864@0.0.1536.864" timestamp="1585865845217" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FourierTransform$Main.coverage" NAME="Main Coverage Results" MODIFIED="1585710191175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FourierTransform$Main.coverage" NAME="Main Coverage Results" MODIFIED="1585710191175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
