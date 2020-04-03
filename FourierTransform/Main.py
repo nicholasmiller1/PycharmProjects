@@ -1,34 +1,33 @@
 import tkinter as tk
-from modules.Vector import Vector
+import math
+from modules.vector import Vector, VectorArrow
+
+CANVAS_WIDTH = 700
+CANVAS_HEIGHT = 700
 
 root = tk.Tk()
-canvas = tk.Canvas(width=200, height=200)
+canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
 canvas.pack()
 
-center = 100, 100
+center = CANVAS_WIDTH/2, CANVAS_HEIGHT/2
 millis_per_frame = int(1000 / 30)
-time = 0
+time_in_millis = 0
 
-label = tk.Label(root, text="Time: " + str(time))
+label = tk.Label(root, text="Time: " + str(time_in_millis))
 label.pack()
 
-xy = [(center[0], center[1] - 3), (center[0], center[1] + 3), (center[0] + 50, center[1] + 3), (center[0] + 50, center[1] + 6), (center[0] + 60, center[1]), (center[0] + 50, center[1] - 6), (center[0] + 50, center[1] - 3)]
-polygon_item = canvas.create_polygon(xy)
+vectors = [VectorArrow(0.1, 1, 7*math.pi/4), VectorArrow(0.3, 1.5, math.pi/2)]
+for v in vectors:
+    v.create_vector(center, canvas)
 
 def update_time():
-    global time
-    time = time + millis_per_frame
-    offset = complex(center[0], center[1])
-    new_xy = []
+    global time_in_millis, label
+    time_in_millis = time_in_millis + millis_per_frame
+    label.configure(text="Time: " + str(time_in_millis / 1000))
 
-    v = Vector(0.1, complex(1, 0))
+    for v in vectors:
+        v.update_vector(time_in_millis, center, canvas)
 
-    for x, y in xy:
-        angle = v.calc_angle(time) * (complex(x,y) - offset) + offset
-        new_xy.append(angle.real)
-        new_xy.append(angle.imag)
-
-    canvas.coords(polygon_item, *new_xy)
     root.after(millis_per_frame, update_time)
 
 update_time()
