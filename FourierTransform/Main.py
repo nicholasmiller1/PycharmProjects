@@ -1,40 +1,35 @@
 import tkinter as tk
 import math
+from modules.vector import Vector, VectorArrow
 
-canvas = tk.Canvas(width=200, height=200)
+CANVAS_WIDTH = 700
+CANVAS_HEIGHT = 700
+
+root = tk.Tk()
+canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
 canvas.pack()
 
-center = 100, 100
+center = CANVAS_WIDTH/2, CANVAS_HEIGHT/2
+millis_per_frame = int(1000 / 30)
+time_in_millis = 0
 
-xy = [(center[0], center[1] - 3), (center[0], center[1] + 3), (center[0] + 50, center[1] + 3), (center[0] + 50, center[1] + 6), (center[0] + 60, center[1]), (center[0] + 50, center[1] - 6), (center[0] + 50, center[1] - 3)]
-polygon_item = canvas.create_polygon(xy)
+label = tk.Label(root, text="Time: " + str(time_in_millis))
+label.pack()
 
-def getangle(event):
-    dx = canvas.canvasx(event.x) - center[0]
-    dy = canvas.canvasy(event.y) - center[1]
-    try:
-        return complex(dx, dy) / abs(complex(dx, dy))
-    except ZeroDivisionError:
-        return 0.0
+vectors = [VectorArrow(0.1, 1, 7*math.pi/4), VectorArrow(0.3, 1.5, math.pi/2)]
+for v in vectors:
+    v.create_vector(center, canvas)
 
-def press(event):
-    global start
-    start = getangle(event)
+def update_time():
+    global time_in_millis, label
+    time_in_millis = time_in_millis + millis_per_frame
+    label.configure(text="Time: " + str(time_in_millis / 1000))
 
-def motion(event):
-    global start
-    angle = getangle(event) / start
-    offset = complex(center[0], center[1])
-    newxy = []
+    for v in vectors:
+        v.update_vector(time_in_millis, center, canvas)
 
-    for x, y in xy:
-        v = angle * (complex(x,y) - offset) + offset
-        newxy.append(v.real)
-        newxy.append(v.imag)
+    root.after(millis_per_frame, update_time)
 
-    canvas.coords(polygon_item, *newxy)
+update_time()
 
-canvas.bind("<Button-1>", press)
-canvas.bind("<B1-Motion>", motion)
-
-tk.mainloop()
+root.mainloop()
