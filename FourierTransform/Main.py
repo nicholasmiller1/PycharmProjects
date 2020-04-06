@@ -16,7 +16,7 @@ time_in_millis = 0
 label = tk.Label(root, text="Time: " + str(time_in_millis))
 label.pack()
 
-vectors = [VectorArrow(0.1, 1, 7*math.pi/4), VectorArrow(0.3, 1.5, math.pi/2)]
+vectors = [VectorArrow(0.1, 1, 0), VectorArrow(0.2, 1.5, 0)]
 for v in vectors:
     v.create_vector(center, canvas)
 
