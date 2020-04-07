@@ -1,5 +1,4 @@
 import math
-import tkinter as tk
 
 class Vector:
 
@@ -33,8 +32,8 @@ class VectorArrow(Vector):
         self.create_vector()
 
     @staticmethod
-    def base_xy(length):
-        return [(0, -1), (0, 1), (0.9 * length, 1), (0.9 * length, 2), (length, 0), (0.9 * length, -2), (0.9 * length, -1)]
+    def base_xy(scale):
+        return [(0, -0.02 * scale), (0, 0.02 * scale), (0.9 * scale, 0.02 * scale), (0.9 * scale, 0.04 * scale), (scale, 0), (0.9 * scale, -0.04 * scale), (0.9 * scale, -0.02 * scale)]
 
     def create_vector(self):
         new_xy = []
