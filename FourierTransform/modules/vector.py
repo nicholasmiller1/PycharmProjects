@@ -8,7 +8,7 @@ class Vector:
         self.magn = magn
         self.angle = angle
 
-    def calc_angle(self, time_in_millis):
+    def get_value(self, time_in_millis):
         time_in_secs = time_in_millis / 1000
         return (self.magn * math.e**(self.angle * 1j))*(math.e**(2 * math.pi * 1j * self.freq * time_in_secs))
 
@@ -23,27 +23,42 @@ class Vector:
 
 class VectorArrow(Vector):
 
-    def __init__(self, freq, magn, angle):
+    def __init__(self, freq, magn, angle, center, canvas, scale):
         super().__init__(freq, magn, angle)
-        self.xy = []
+        self.xy = VectorArrow.base_xy(scale)
         self.polygon = None
+        self.center = complex(center[0], center[1])
+        self.canvas = canvas
+        self.scale = scale
+        self.create_vector()
 
-    def create_vector(self, center, canvas):
-        scale = super().get_magn()
-        base = 5
-        self.xy = [(center[0], center[1] - (base * scale)), (center[0], center[1] + (base * scale)), (center[0] + (10 * base * scale), center[1] + (base * scale)),
-              (center[0] + (10 * base * scale), center[1] + (2 * base * scale)), (center[0] + (12 * base * scale), center[1]), (center[0] + (10 * base * scale), center[1] - (2 * base * scale)),
-              (center[0] + (10 * base * scale), center[1] - (base * scale))]
-        self.polygon = canvas.create_polygon(self.xy)
+    @staticmethod
+    def base_xy(length):
+        return [(0, -1), (0, 1), (0.9 * length, 1), (0.9 * length, 2), (length, 0), (0.9 * length, -2), (0.9 * length, -1)]
 
-    def update_vector(self, time_in_millis, center, canvas):
-        offset = complex(center[0], center[1])
+    def create_vector(self):
         new_xy = []
 
         for x, y in self.xy:
-            angle = super().calc_angle(time_in_millis) * (complex(x,y) - offset) + offset
+            origin = complex(x,y) + self.center
+            new_xy.append((origin.real, origin.imag))
+
+        self.xy = new_xy
+        self.polygon = self.canvas.create_polygon(self.xy)
+        self.plot()
+
+    def update_vector(self, time_in_millis):
+        new_xy = []
+
+        for x, y in self.xy:
+            angle = super().get_value(time_in_millis) * (complex(x,y) - self.center) + self.center
             new_xy.append(angle.real)
             new_xy.append(angle.imag)
 
-        canvas.coords(self.polygon, *new_xy)
+        self.canvas.coords(self.polygon, new_xy)
+
+    def plot(self):
+        radius = super().get_magn() * self.scale
+
+        self.canvas.create_oval(self.center.real - radius, self.center.imag - radius, self.center.real + radius, self.center.imag + radius)
 

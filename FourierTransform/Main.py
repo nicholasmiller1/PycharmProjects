@@ -4,6 +4,7 @@ from modules.vector import Vector, VectorArrow
 
 CANVAS_WIDTH = 700
 CANVAS_HEIGHT = 700
+SCALE = 60
 
 root = tk.Tk()
 canvas = tk.Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
@@ -16,9 +17,7 @@ time_in_millis = 0
 label = tk.Label(root, text="Time: " + str(time_in_millis))
 label.pack()
 
-vectors = [VectorArrow(0.1, 1, 0), VectorArrow(0.2, 1.5, 0)]
-for v in vectors:
-    v.create_vector(center, canvas)
+vectors = [VectorArrow(0.1, 1, 0, center, canvas, SCALE), VectorArrow(0.1, 0.3, 0, center, canvas, SCALE)]
 
 def update_time():
     global time_in_millis, label
@@ -26,7 +25,7 @@ def update_time():
     label.configure(text="Time: " + str(time_in_millis / 1000))
 
     for v in vectors:
-        v.update_vector(time_in_millis, center, canvas)
+        v.update_vector(time_in_millis)
 
     root.after(millis_per_frame, update_time)
 
