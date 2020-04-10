@@ -20,12 +20,10 @@ label = tk.Label(root, text="Time: " + str(time_in_millis))
 label.pack()
 
 vectors = [VectorArrow(0 * SPEED, 0, 0),
-           VectorArrow(1 * SPEED, 1.5, 0),
-           VectorArrow(-1 * SPEED, 1, math.pi/2),
-           VectorArrow(2 * SPEED, 0.5, math.pi),
-           VectorArrow(-2 * SPEED, 1.3, 0),
-           VectorArrow(3 * SPEED, 2, 1.7),
-           VectorArrow(-3 * SPEED, 0.9, 1.37)]
+           VectorArrow(1 * SPEED, 1.67, 2),
+           VectorArrow(-1 * SPEED, 0.38, 1),
+           VectorArrow(2 * SPEED, 0.9, math.pi),
+           VectorArrow(-2 * SPEED, 1.23, 2.1)]
 series = SeriesView(vectors, origin, canvas, SCALE)
 
 

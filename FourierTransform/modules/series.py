@@ -52,9 +52,11 @@ class SeriesView(Series):
 
     def update_series(self, time_in_millis):
         vectors = super().get_vectors()
-        vectors[0].update_vector(time_in_millis, self.origin, self.canvas)
+
+        vectors[0].update_vector(time_in_millis, self.origin, self.canvas, self.scale)
+
         for i in range(1, len(vectors)):
-            vectors[i].update_vector(time_in_millis, vectors[i-1].get_tip(time_in_millis, self.scale), self.canvas)
+            vectors[i].update_vector(time_in_millis, vectors[i-1].get_tip(time_in_millis, self.scale), self.canvas, self.scale)
 
     def draw(self, time_in_millis):
         radius = 1

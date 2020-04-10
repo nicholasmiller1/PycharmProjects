@@ -34,6 +34,7 @@ class VectorArrow(Vector):
     def __init__(self, freq, magnitude, angle):
         super().__init__(freq, magnitude, angle)
         self.polygon = None
+        self.plot = None
         self.center = None
 
     def __str__(self):
@@ -47,9 +48,9 @@ class VectorArrow(Vector):
 
     def create_vector(self, canvas):
         self.polygon = canvas.create_polygon(VectorArrow.base_xy)
-        # self.plot(canvas, center, scale)
+        self.plot = canvas.create_oval(0, 0, 1, 1)
 
-    def update_vector(self, time_in_millis, center, canvas):
+    def update_vector(self, time_in_millis, center, canvas, scale):
         new_xy = []
         self.center = center
 
@@ -59,11 +60,14 @@ class VectorArrow(Vector):
             new_xy.append(angle.imag)
 
         canvas.coords(self.polygon, new_xy)
+        self.update_plot(canvas, scale)
 
-    def plot(self, canvas, center, scale):
+    def update_plot(self, canvas, scale):
         radius = super().get_magnitude() * scale
+        new_coords = [self.center.real - radius, self.center.imag - radius,
+                      self.center.real + radius, self.center.imag + radius]
 
-        canvas.create_oval(center.real - radius, center.imag - radius, center.real + radius, center.imag + radius)
+        canvas.coords(self.plot, new_coords)
 
     def get_tip(self, time_in_millis, scale):
         return super().get_value(time_in_millis) * scale + self.center
