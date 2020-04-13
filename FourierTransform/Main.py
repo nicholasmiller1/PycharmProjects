@@ -25,7 +25,8 @@ vectors = [VectorArrow(0 * SPEED, 0, 0),
            VectorArrow(2 * SPEED, 0.9, math.pi),
            VectorArrow(-2 * SPEED, 1.23, 2.1)]
 series = SeriesView(vectors, origin, canvas, SCALE)
-
+# Implement button to turn guidelines on and off
+# Use line with ever adding points to serialize drawing
 
 def update_time():
     global time_in_millis, label
