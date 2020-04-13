@@ -3,3 +3,6 @@
 
 # User ignored files
 /libraries/core.xml
+
+#Byte-Compiled Files
+/modules/__pycache__
