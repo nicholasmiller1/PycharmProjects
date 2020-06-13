@@ -50,13 +50,14 @@ class SeriesView(Series):
         for v in super().get_vectors():
             v.create_vector(self.canvas)
 
-    def update_series(self, time_in_millis):
+    def update_series(self, time_in_millis, guidelines):
         vectors = super().get_vectors()
 
-        vectors[0].update_vector(time_in_millis, self.origin, self.canvas, self.scale)
+        vectors[0].update_vector(time_in_millis, self.origin, self.canvas, self.scale, guidelines)
 
         for i in range(1, len(vectors)):
-            vectors[i].update_vector(time_in_millis, vectors[i-1].get_tip(time_in_millis, self.scale), self.canvas, self.scale)
+            tip = vectors[i-1].get_tip(time_in_millis, self.scale)
+            vectors[i].update_vector(time_in_millis, tip, self.canvas, self.scale, guidelines)
 
     def draw(self, time_in_millis):
         radius = 1
