@@ -1,7 +1,6 @@
 import tkinter as tk
-import math
-from modules.vector import VectorArrow
-from modules.series import SeriesView
+import modules.series as s
+import modules.vector as v
 
 CANVAS_WIDTH = 700
 CANVAS_HEIGHT = 700
@@ -20,15 +19,9 @@ time_in_millis = 0
 label = tk.Label(root, text="Time: " + str(time_in_millis))
 label.pack()
 
-vectors = [VectorArrow(0 * SPEED, 0, 0),
-           VectorArrow(1 * SPEED, 1.67, 2),
-           VectorArrow(-1 * SPEED, 0.38, 1),
-           VectorArrow(2 * SPEED, 0.9, math.pi),
-           VectorArrow(-2 * SPEED, 1.23, 2.1)]
-series = SeriesView(vectors, origin, canvas, SCALE)
-# Implement button to turn guidelines on and off
-# Use line with ever adding points to serialize drawing
-# Change color and opacity of different elements
+vectors = [v.VectorArrow(1 * SPEED, 1, 0)]
+series = s.SeriesView(vectors, origin, canvas, SCALE)
+
 
 def update_time():
     global time_in_millis, label, guidelines
@@ -39,6 +32,7 @@ def update_time():
     series.draw(time_in_millis)
 
     root.after(millis_per_frame, update_time)
+
 
 def change_guidelines():
     global guidelines
